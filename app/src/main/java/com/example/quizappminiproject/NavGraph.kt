@@ -12,7 +12,7 @@ fun NavGraph() {
 
     NavHost(
         navController = navContrller,
-        startDestination = "quiz"
+        startDestination = "home"
     ) {
         composable("quiz"){
             QuizScreen(navContrller)
@@ -21,6 +21,12 @@ fun NavGraph() {
             val score = backStackEntry.arguments?.getString("score")?.toIntOrNull() ?:0
             Score(score = score)
         }
+        composable("home"){
+            HomeScreen(navContrller)
+
+        }
+
+
     }
 
 
